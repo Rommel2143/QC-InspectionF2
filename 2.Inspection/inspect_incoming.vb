@@ -3,7 +3,7 @@ Public Class inspect_incoming
     Public selectedrow As Integer
     Private headerCheckBox As CheckBox
     Private Sub inspect_incoming_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        AddCheckboxColumn()
+
 
     End Sub
 
@@ -18,10 +18,9 @@ Public Class inspect_incoming
 
 
     Private Sub Guna2DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles dtpicker1.ValueChanged
-
-        refreshgrid()
+        cmb_display("SELECT distinct(batch) FROM `f2_parts_scan` WHERE datein='" & dtpicker1.Value.ToString("yyyy-MM-dd") & "' ORDER BY batch ", "batch", cmb_batch)
     End Sub
-    Private Sub AddCheckboxColumn()
+    Public Sub AddCheckboxColumn()
         ' Check if the checkbox column already exists
         If Not datagrid1.Columns.Contains("SelectCheckBox") Then
             ' Create a new checkbox column
@@ -47,24 +46,36 @@ Public Class inspect_incoming
         Try
             con.Close()
             con.Open()
-            Dim cmdrefreshgrid As New MySqlCommand("SELECT `id`,`batch`,`partcode`, `suppliercode`, `lotnumber`, `remarks`, `qty`, `userin`,
-                                                     CASE `status_inspect` " &
-                      "WHEN 0 THEN 'Pending' " &
-                      "WHEN 1 THEN 'Passed' " &
-                      "WHEN 2 THEN 'Failed' " &
-                      "END AS `status`   FROM `f2_parts_scan` WHERE datein='" & dtpicker1.Value.ToString("yyyy-MM-dd") & "'", con)
+            Dim query As String = "SELECT id as Record_ID, `partcode`, `suppliercode`, `remarks`, `lotnumber`, `serial`, `qty`, 
+                              CASE `status_inspect` 
+                              WHEN 0 THEN 'Pending' 
+                              WHEN 1 THEN 'Passed' 
+                              WHEN 2 THEN 'Failed' 
+                              END AS `status` 
+                              FROM `f2_parts_scan` 
+                              WHERE datein = @datein AND batch = @batch"
+
+            Dim cmdrefreshgrid As New MySqlCommand(query, con)
+            cmdrefreshgrid.Parameters.AddWithValue("@datein", dtpicker1.Value.ToString("yyyy-MM-dd"))
+            cmdrefreshgrid.Parameters.AddWithValue("@batch", cmb_batch.Text)
+
             Dim da As New MySqlDataAdapter(cmdrefreshgrid)
             Dim dt As New DataTable
             da.Fill(dt)
             datagrid1.DataSource = dt
 
+
+            datagrid1.Columns("Record_ID").Visible = False
+
+
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         Finally
-
             con.Close()
+
         End Try
     End Sub
+
 
     Private Sub Guna2PictureBox2_Click(sender As Object, e As EventArgs) Handles Guna2PictureBox2.Click
         error_panel.Visible = False
@@ -99,5 +110,15 @@ Public Class inspect_incoming
         inspect.BringToFront()
         'inspect_judge.Show()
         'inspect_judge.BringToFront()
+    End Sub
+
+    Private Sub Guna2ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_batch.SelectedIndexChanged
+
+        refreshgrid()
+        AddCheckboxColumn()
+    End Sub
+
+    Private Sub Guna2Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel1.Paint
+
     End Sub
 End Class

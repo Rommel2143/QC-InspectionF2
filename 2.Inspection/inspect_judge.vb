@@ -22,7 +22,7 @@ Public Class inspect_judge
 
                 If isChecked Then
                     ' Get the row's ID
-                    Dim rowId As Integer = Convert.ToInt32(row.Cells("id").Value)
+                    Dim rowId As Integer = Convert.ToInt32(row.Cells(0).Value)
 
                     ' Update the status_inspect for the selected row
                     Dim cmdUpdateStatus As New MySqlCommand("UPDATE `f2_parts_scan` SET `status_inspect` = @newStatus WHERE `id` = @id", con)

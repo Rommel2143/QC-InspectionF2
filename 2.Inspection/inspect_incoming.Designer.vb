@@ -37,6 +37,11 @@ Partial Class inspect_incoming
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_select = New Guna.UI2.WinForms.Guna2Button()
+        Me.cmb_batch = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Guna2ComboBox1 = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.error_panel.SuspendLayout()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -100,12 +105,17 @@ Partial Class inspect_incoming
         '
         'Guna2Panel1
         '
+        Me.Guna2Panel1.Controls.Add(Me.Label3)
+        Me.Guna2Panel1.Controls.Add(Me.Guna2ComboBox1)
+        Me.Guna2Panel1.Controls.Add(Me.Label2)
+        Me.Guna2Panel1.Controls.Add(Me.Label1)
+        Me.Guna2Panel1.Controls.Add(Me.cmb_batch)
         Me.Guna2Panel1.Controls.Add(Me.dtpicker1)
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Panel1.Location = New System.Drawing.Point(0, 34)
         Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(1352, 172)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(1352, 116)
         Me.Guna2Panel1.TabIndex = 1
         '
         'dtpicker1
@@ -116,7 +126,7 @@ Partial Class inspect_incoming
         Me.dtpicker1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpicker1.ForeColor = System.Drawing.Color.White
         Me.dtpicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.dtpicker1.Location = New System.Drawing.Point(44, 24)
+        Me.dtpicker1.Location = New System.Drawing.Point(44, 42)
         Me.dtpicker1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.dtpicker1.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.dtpicker1.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
@@ -127,6 +137,8 @@ Partial Class inspect_incoming
         '
         'datagrid1
         '
+        Me.datagrid1.AllowUserToAddRows = False
+        Me.datagrid1.AllowUserToDeleteRows = False
         Me.datagrid1.AllowUserToResizeRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -154,7 +166,7 @@ Partial Class inspect_incoming
         Me.datagrid1.DefaultCellStyle = DataGridViewCellStyle3
         Me.datagrid1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.datagrid1.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.datagrid1.Location = New System.Drawing.Point(0, 255)
+        Me.datagrid1.Location = New System.Drawing.Point(0, 199)
         Me.datagrid1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.datagrid1.Name = "datagrid1"
         Me.datagrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -168,7 +180,7 @@ Partial Class inspect_incoming
         Me.datagrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.datagrid1.RowHeadersVisible = False
         Me.datagrid1.RowTemplate.Height = 29
-        Me.datagrid1.Size = New System.Drawing.Size(1352, 439)
+        Me.datagrid1.Size = New System.Drawing.Size(1352, 495)
         Me.datagrid1.TabIndex = 2
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -197,7 +209,7 @@ Partial Class inspect_incoming
         Me.Guna2Panel2.Controls.Add(Me.Guna2Button1)
         Me.Guna2Panel2.Controls.Add(Me.btn_select)
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2Panel2.Location = New System.Drawing.Point(0, 206)
+        Me.Guna2Panel2.Location = New System.Drawing.Point(0, 150)
         Me.Guna2Panel2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Guna2Panel2.Name = "Guna2Panel2"
         Me.Guna2Panel2.Size = New System.Drawing.Size(1352, 49)
@@ -235,6 +247,72 @@ Partial Class inspect_incoming
         Me.btn_select.TabIndex = 0
         Me.btn_select.Text = "Select all"
         '
+        'cmb_batch
+        '
+        Me.cmb_batch.BackColor = System.Drawing.Color.Transparent
+        Me.cmb_batch.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmb_batch.DropDownHeight = 360
+        Me.cmb_batch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_batch.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_batch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_batch.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmb_batch.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmb_batch.IntegralHeight = False
+        Me.cmb_batch.ItemHeight = 30
+        Me.cmb_batch.Location = New System.Drawing.Point(362, 42)
+        Me.cmb_batch.MaxDropDownItems = 10
+        Me.cmb_batch.Name = "cmb_batch"
+        Me.cmb_batch.Size = New System.Drawing.Size(259, 36)
+        Me.cmb_batch.TabIndex = 1
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label1.Location = New System.Drawing.Point(41, 21)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(88, 17)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Date recieved"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label2.Location = New System.Drawing.Point(359, 22)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(72, 17)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Batch code"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label3.Location = New System.Drawing.Point(665, 22)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(60, 17)
+        Me.Label3.TabIndex = 5
+        Me.Label3.Text = "Partcode"
+        '
+        'Guna2ComboBox1
+        '
+        Me.Guna2ComboBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.Guna2ComboBox1.DropDownHeight = 360
+        Me.Guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2ComboBox1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.Guna2ComboBox1.IntegralHeight = False
+        Me.Guna2ComboBox1.ItemHeight = 30
+        Me.Guna2ComboBox1.Location = New System.Drawing.Point(668, 42)
+        Me.Guna2ComboBox1.MaxDropDownItems = 10
+        Me.Guna2ComboBox1.Name = "Guna2ComboBox1"
+        Me.Guna2ComboBox1.Size = New System.Drawing.Size(259, 36)
+        Me.Guna2ComboBox1.TabIndex = 4
+        '
         'inspect_incoming
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
@@ -255,6 +333,7 @@ Partial Class inspect_incoming
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel1.ResumeLayout(False)
+        Me.Guna2Panel1.PerformLayout()
         CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -271,4 +350,9 @@ Partial Class inspect_incoming
     Friend WithEvents Guna2PictureBox2 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents btn_select As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents cmb_batch As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Guna2ComboBox1 As Guna.UI2.WinForms.Guna2ComboBox
 End Class
