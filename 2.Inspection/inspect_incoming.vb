@@ -53,11 +53,12 @@ Public Class inspect_incoming
                               WHEN 2 THEN 'Failed' 
                               END AS `status` 
                               FROM `f2_parts_scan` 
-                              WHERE datein = @datein AND batch = @batch"
+                              WHERE datein = @datein AND batch = @batch and partcode=@partcode"
 
             Dim cmdrefreshgrid As New MySqlCommand(query, con)
             cmdrefreshgrid.Parameters.AddWithValue("@datein", dtpicker1.Value.ToString("yyyy-MM-dd"))
             cmdrefreshgrid.Parameters.AddWithValue("@batch", cmb_batch.Text)
+            cmdrefreshgrid.Parameters.AddWithValue("@partcode", cmb_partcode.Text)
 
             Dim da As New MySqlDataAdapter(cmdrefreshgrid)
             Dim dt As New DataTable
@@ -113,12 +114,18 @@ Public Class inspect_incoming
     End Sub
 
     Private Sub Guna2ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_batch.SelectedIndexChanged
+        cmb_display("SELECT DISTINCT(partcode)  FROM `f2_parts_scan`  WHERE datein = '" & dtpicker1.Value.ToString("yyyy-MM-dd") & "' AND batch = '" & cmb_batch.Text & "'", "partcode", cmb_partcode)
 
-        refreshgrid()
-        AddCheckboxColumn()
+
+
     End Sub
 
     Private Sub Guna2Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel1.Paint
 
+    End Sub
+
+    Private Sub Guna2ComboBox1_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cmb_partcode.SelectedIndexChanged
+        refreshgrid()
+        AddCheckboxColumn()
     End Sub
 End Class

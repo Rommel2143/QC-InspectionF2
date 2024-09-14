@@ -28,19 +28,19 @@ Partial Class subframe
         Me.InspectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IncomingLogsheetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.userstrip = New System.Windows.Forms.ToolStripMenuItem()
-        Me.logout = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ManageMyProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CheckForUpdatesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeviceInfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SuggestImprovementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.logout = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.add_user = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.lbl_calendar = New System.Windows.Forms.Label()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.lbl_tittle = New System.Windows.Forms.Label()
-        Me.add_user = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ManageMyProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -95,11 +95,11 @@ Partial Class subframe
         Me.userstrip.Text = "User"
         Me.userstrip.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         '
-        'logout
+        'ManageMyProfileToolStripMenuItem
         '
-        Me.logout.Name = "logout"
-        Me.logout.Size = New System.Drawing.Size(224, 24)
-        Me.logout.Text = "Logout"
+        Me.ManageMyProfileToolStripMenuItem.Name = "ManageMyProfileToolStripMenuItem"
+        Me.ManageMyProfileToolStripMenuItem.Size = New System.Drawing.Size(224, 24)
+        Me.ManageMyProfileToolStripMenuItem.Text = "Manage my profile"
         '
         'CheckForUpdatesToolStripMenuItem
         '
@@ -119,11 +119,24 @@ Partial Class subframe
         Me.SuggestImprovementToolStripMenuItem.Size = New System.Drawing.Size(224, 24)
         Me.SuggestImprovementToolStripMenuItem.Text = "Suggest improvement"
         '
+        'logout
+        '
+        Me.logout.Name = "logout"
+        Me.logout.Size = New System.Drawing.Size(224, 24)
+        Me.logout.Text = "Logout"
+        '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(224, 24)
         Me.ExitToolStripMenuItem.Text = "Exit"
+        '
+        'add_user
+        '
+        Me.add_user.Name = "add_user"
+        Me.add_user.Size = New System.Drawing.Size(224, 24)
+        Me.add_user.Text = "Add User"
+        Me.add_user.Visible = False
         '
         'Panel1
         '
@@ -191,22 +204,8 @@ Partial Class subframe
         Me.lbl_tittle.ForeColor = System.Drawing.Color.White
         Me.lbl_tittle.Location = New System.Drawing.Point(43, 2)
         Me.lbl_tittle.Name = "lbl_tittle"
-        Me.lbl_tittle.Size = New System.Drawing.Size(53, 20)
+        Me.lbl_tittle.Size = New System.Drawing.Size(0, 20)
         Me.lbl_tittle.TabIndex = 0
-        Me.lbl_tittle.Text = "Label1"
-        '
-        'add_user
-        '
-        Me.add_user.Name = "add_user"
-        Me.add_user.Size = New System.Drawing.Size(224, 24)
-        Me.add_user.Text = "Add User"
-        Me.add_user.Visible = False
-        '
-        'ManageMyProfileToolStripMenuItem
-        '
-        Me.ManageMyProfileToolStripMenuItem.Name = "ManageMyProfileToolStripMenuItem"
-        Me.ManageMyProfileToolStripMenuItem.Size = New System.Drawing.Size(224, 24)
-        Me.ManageMyProfileToolStripMenuItem.Text = "Manage my profile"
         '
         'subframe
         '

@@ -32,16 +32,16 @@ Partial Class inspect_incoming
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.lbl_error = New System.Windows.Forms.Label()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cmb_partcode = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.cmb_batch = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.dtpicker1 = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.datagrid1 = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_select = New Guna.UI2.WinForms.Guna2Button()
-        Me.cmb_batch = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Guna2ComboBox1 = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.error_panel.SuspendLayout()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -106,7 +106,7 @@ Partial Class inspect_incoming
         'Guna2Panel1
         '
         Me.Guna2Panel1.Controls.Add(Me.Label3)
-        Me.Guna2Panel1.Controls.Add(Me.Guna2ComboBox1)
+        Me.Guna2Panel1.Controls.Add(Me.cmb_partcode)
         Me.Guna2Panel1.Controls.Add(Me.Label2)
         Me.Guna2Panel1.Controls.Add(Me.Label1)
         Me.Guna2Panel1.Controls.Add(Me.cmb_batch)
@@ -117,6 +117,72 @@ Partial Class inspect_incoming
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(1352, 116)
         Me.Guna2Panel1.TabIndex = 1
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label3.Location = New System.Drawing.Point(665, 22)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(60, 17)
+        Me.Label3.TabIndex = 5
+        Me.Label3.Text = "Partcode"
+        '
+        'cmb_partcode
+        '
+        Me.cmb_partcode.BackColor = System.Drawing.Color.Transparent
+        Me.cmb_partcode.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmb_partcode.DropDownHeight = 360
+        Me.cmb_partcode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_partcode.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_partcode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_partcode.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmb_partcode.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmb_partcode.IntegralHeight = False
+        Me.cmb_partcode.ItemHeight = 30
+        Me.cmb_partcode.Location = New System.Drawing.Point(668, 42)
+        Me.cmb_partcode.MaxDropDownItems = 10
+        Me.cmb_partcode.Name = "cmb_partcode"
+        Me.cmb_partcode.Size = New System.Drawing.Size(259, 36)
+        Me.cmb_partcode.TabIndex = 4
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label2.Location = New System.Drawing.Point(359, 22)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(72, 17)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Batch code"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label1.Location = New System.Drawing.Point(41, 21)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(88, 17)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Date recieved"
+        '
+        'cmb_batch
+        '
+        Me.cmb_batch.BackColor = System.Drawing.Color.Transparent
+        Me.cmb_batch.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmb_batch.DropDownHeight = 360
+        Me.cmb_batch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_batch.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_batch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_batch.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmb_batch.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmb_batch.IntegralHeight = False
+        Me.cmb_batch.ItemHeight = 30
+        Me.cmb_batch.Location = New System.Drawing.Point(362, 42)
+        Me.cmb_batch.MaxDropDownItems = 10
+        Me.cmb_batch.Name = "cmb_batch"
+        Me.cmb_batch.Size = New System.Drawing.Size(259, 36)
+        Me.cmb_batch.TabIndex = 1
         '
         'dtpicker1
         '
@@ -247,72 +313,6 @@ Partial Class inspect_incoming
         Me.btn_select.TabIndex = 0
         Me.btn_select.Text = "Select all"
         '
-        'cmb_batch
-        '
-        Me.cmb_batch.BackColor = System.Drawing.Color.Transparent
-        Me.cmb_batch.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmb_batch.DropDownHeight = 360
-        Me.cmb_batch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_batch.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmb_batch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmb_batch.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cmb_batch.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cmb_batch.IntegralHeight = False
-        Me.cmb_batch.ItemHeight = 30
-        Me.cmb_batch.Location = New System.Drawing.Point(362, 42)
-        Me.cmb_batch.MaxDropDownItems = 10
-        Me.cmb_batch.Name = "cmb_batch"
-        Me.cmb_batch.Size = New System.Drawing.Size(259, 36)
-        Me.cmb_batch.TabIndex = 1
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label1.Location = New System.Drawing.Point(41, 21)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(88, 17)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Date recieved"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label2.Location = New System.Drawing.Point(359, 22)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(72, 17)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Batch code"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label3.Location = New System.Drawing.Point(665, 22)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(60, 17)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Partcode"
-        '
-        'Guna2ComboBox1
-        '
-        Me.Guna2ComboBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.Guna2ComboBox1.DropDownHeight = 360
-        Me.Guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2ComboBox1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.Guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Guna2ComboBox1.IntegralHeight = False
-        Me.Guna2ComboBox1.ItemHeight = 30
-        Me.Guna2ComboBox1.Location = New System.Drawing.Point(668, 42)
-        Me.Guna2ComboBox1.MaxDropDownItems = 10
-        Me.Guna2ComboBox1.Name = "Guna2ComboBox1"
-        Me.Guna2ComboBox1.Size = New System.Drawing.Size(259, 36)
-        Me.Guna2ComboBox1.TabIndex = 4
-        '
         'inspect_incoming
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
@@ -354,5 +354,5 @@ Partial Class inspect_incoming
     Friend WithEvents Label1 As Label
     Friend WithEvents cmb_batch As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents Guna2ComboBox1 As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents cmb_partcode As Guna.UI2.WinForms.Guna2ComboBox
 End Class
