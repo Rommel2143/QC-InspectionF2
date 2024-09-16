@@ -8,7 +8,35 @@ Public Class inspect_judge
         ChangeSelectedRowsStatus(2)
     End Sub
     Private Sub txt_pending_Click(sender As Object, e As EventArgs) Handles txt_pending.Click
-        ChangeSelectedRowsStatus(0)
+        Try
+            con.Close()
+            con.Open()
+
+            ' Loop through each row to find the selected ones
+            For Each row As DataGridViewRow In inspect_incoming.datagrid1.Rows
+                Dim isChecked As Boolean = Convert.ToBoolean(row.Cells("SelectCheckBox").Value)
+
+                If isChecked Then
+                    ' Get the row's ID
+                    Dim rowId As Integer = Convert.ToInt32(row.Cells("Record_ID").Value)
+
+                    ' Update the status_inspect for the selected row
+                    Dim cmdUpdateStatus As New MySqlCommand("UPDATE `f2_parts_scan` SET `status_inspect` = @newStatus , inspector = '',reference = '',date_inspect=NULL  WHERE `id` = @id", con)
+                    cmdUpdateStatus.Parameters.AddWithValue("@newStatus", 0)
+                    cmdUpdateStatus.Parameters.AddWithValue("@id", rowId)
+                    cmdUpdateStatus.ExecuteNonQuery()
+                End If
+            Next
+
+            ' Refresh the grid to reflect the changes
+            inspect_incoming.refreshgrid()
+            inspect_incoming.btn_select.Text = "Select all"
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            con.Close()
+        End Try
     End Sub
 
     Public Sub ChangeSelectedRowsStatus(newStatus As Integer)
@@ -22,10 +50,10 @@ Public Class inspect_judge
 
                 If isChecked Then
                     ' Get the row's ID
-                    Dim rowId As Integer = Convert.ToInt32(row.Cells(0).Value)
+                    Dim rowId As Integer = Convert.ToInt32(row.Cells("Record_ID").Value)
 
                     ' Update the status_inspect for the selected row
-                    Dim cmdUpdateStatus As New MySqlCommand("UPDATE `f2_parts_scan` SET `status_inspect` = @newStatus WHERE `id` = @id", con)
+                    Dim cmdUpdateStatus As New MySqlCommand("UPDATE `f2_parts_scan` SET `status_inspect` = @newStatus , inspector = '" & idno & "',reference = '" & inspect_incoming.reference_no & "',date_inspect = '" & datedb & "'  WHERE `id` = @id", con)
                     cmdUpdateStatus.Parameters.AddWithValue("@newStatus", newStatus)
                     cmdUpdateStatus.Parameters.AddWithValue("@id", rowId)
                     cmdUpdateStatus.ExecuteNonQuery()

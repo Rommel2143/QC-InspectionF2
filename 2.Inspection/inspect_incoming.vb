@@ -1,10 +1,11 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports System.Text
 Public Class inspect_incoming
     Public selectedrow As Integer
-    Private headerCheckBox As CheckBox
+    Public reference_no As String
     Private Sub inspect_incoming_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
+        dtpicker1.Value = Date.Now
+        cmb_display("SELECT DISTINCT(reference) FROM f2_parts_scan WHERE date_inspect='" & datedb & "'", "reference", cmb_reference)
     End Sub
 
 
@@ -46,7 +47,7 @@ Public Class inspect_incoming
         Try
             con.Close()
             con.Open()
-            Dim query As String = "SELECT id as Record_ID, `partcode`, `suppliercode`, `remarks`, `lotnumber`, `serial`, `qty`, 
+            Dim query As String = "SELECT id as Record_ID, `partcode`, `suppliercode`, `remarks`, `lotnumber`, `qty`, 
                               CASE `status_inspect` 
                               WHEN 0 THEN 'Pending' 
                               WHEN 1 THEN 'Passed' 
@@ -120,12 +121,80 @@ Public Class inspect_incoming
 
     End Sub
 
-    Private Sub Guna2Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel1.Paint
+    Private Sub Guna2Panel1_Paint(sender As Object, e As PaintEventArgs)
 
     End Sub
 
     Private Sub Guna2ComboBox1_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cmb_partcode.SelectedIndexChanged
         refreshgrid()
         AddCheckboxColumn()
+    End Sub
+
+    Private Sub refresh_records()
+        Try
+            con.Close()
+            con.Open()
+            Dim query As String = "SELECT id as Record_ID,`datein` AS Date_Recieved,partcode,supplier, `lotnumber`,`qty`, date_inspect,
+                              CASE `status_inspect` 
+                              WHEN 0 THEN 'Pending' 
+                              WHEN 1 THEN 'Passed' 
+                              WHEN 2 THEN 'Failed' 
+                              END AS `status` ,
+                              inspector
+                              FROM `f2_parts_scan` 
+                              WHERE reference = '" & reference_no & "'"
+
+            Dim cmdrefreshgrid As New MySqlCommand(query, con)
+            Dim da As New MySqlDataAdapter(cmdrefreshgrid)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            datagrid2.DataSource = dt
+
+
+            datagrid2.Columns("Record_ID").Visible = False
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            con.Close()
+
+        End Try
+    End Sub
+
+    Public Function GenerateReferenceNumber() As String
+        Dim letters As String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        Dim digits As String = "0123456789"
+        Dim reference As New StringBuilder()
+        Dim datecode As String = Date.Now.ToString("yy")
+        Dim rand As New Random()
+
+        reference.Append("TRC") ' Add hyphen separator
+        reference.Append(datecode)
+        reference.Append("-") ' Add hyphen separator
+
+        For i As Integer = 1 To 5
+            reference.Append(digits(rand.Next(digits.Length)))
+        Next
+
+
+        Return reference.ToString()
+    End Function
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+        reference_no = GenerateReferenceNumber()
+        cmb_reference.Items.Add(reference_no)
+        If cmb_reference.Items.Count > 0 Then
+            cmb_reference.SelectedIndex = cmb_reference.Items.Count - 1
+        End If
+
+    End Sub
+
+    Private Sub cmb_reference_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_reference.SelectedIndexChanged
+        reference_no = cmb_reference.Text
+        refresh_records()
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
     End Sub
 End Class
