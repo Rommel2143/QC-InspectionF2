@@ -71,7 +71,7 @@ Partial Class subframe
         Me.InspectToolStripMenuItem.Image = CType(resources.GetObject("InspectToolStripMenuItem.Image"), System.Drawing.Image)
         Me.InspectToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.InspectToolStripMenuItem.Name = "InspectToolStripMenuItem"
-        Me.InspectToolStripMenuItem.Size = New System.Drawing.Size(220, 38)
+        Me.InspectToolStripMenuItem.Size = New System.Drawing.Size(260, 38)
         Me.InspectToolStripMenuItem.Text = "Inspect Incoming"
         '
         'IncomingLogsheetToolStripMenuItem
@@ -80,8 +80,8 @@ Partial Class subframe
         Me.IncomingLogsheetToolStripMenuItem.Image = CType(resources.GetObject("IncomingLogsheetToolStripMenuItem.Image"), System.Drawing.Image)
         Me.IncomingLogsheetToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.IncomingLogsheetToolStripMenuItem.Name = "IncomingLogsheetToolStripMenuItem"
-        Me.IncomingLogsheetToolStripMenuItem.Size = New System.Drawing.Size(220, 38)
-        Me.IncomingLogsheetToolStripMenuItem.Text = "Incoming Logsheet"
+        Me.IncomingLogsheetToolStripMenuItem.Size = New System.Drawing.Size(260, 38)
+        Me.IncomingLogsheetToolStripMenuItem.Text = "Print Inspection Logsheet"
         '
         'userstrip
         '

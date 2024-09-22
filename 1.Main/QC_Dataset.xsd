@@ -12,26 +12,33 @@
   <xs:element name="QC_Dataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="QC_Dataset" msprop:Generator_UserDSName="QC_Dataset">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="f2_parts_scan" msprop:Generator_TableClassName="f2_parts_scanDataTable" msprop:Generator_TableVarName="tablef2_parts_scan" msprop:Generator_TablePropName="f2_parts_scan" msprop:Generator_RowDeletingName="f2_parts_scanRowDeleting" msprop:Generator_RowChangingName="f2_parts_scanRowChanging" msprop:Generator_RowEvHandlerName="f2_parts_scanRowChangeEventHandler" msprop:Generator_RowDeletedName="f2_parts_scanRowDeleted" msprop:Generator_UserTableName="f2_parts_scan" msprop:Generator_RowChangedName="f2_parts_scanRowChanged" msprop:Generator_RowEvArgName="f2_parts_scanRowChangeEvent" msprop:Generator_RowClassName="f2_parts_scanRow">
+        <xs:element name="f2_parts_scan" msprop:Generator_TableClassName="f2_parts_scanDataTable" msprop:Generator_TableVarName="tablef2_parts_scan" msprop:Generator_RowChangedName="f2_parts_scanRowChanged" msprop:Generator_TablePropName="f2_parts_scan" msprop:Generator_RowDeletingName="f2_parts_scanRowDeleting" msprop:Generator_RowChangingName="f2_parts_scanRowChanging" msprop:Generator_RowEvHandlerName="f2_parts_scanRowChangeEventHandler" msprop:Generator_RowDeletedName="f2_parts_scanRowDeleted" msprop:Generator_RowClassName="f2_parts_scanRow" msprop:Generator_UserTableName="f2_parts_scan" msprop:Generator_RowEvArgName="f2_parts_scanRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" minOccurs="0" />
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
               <xs:element name="batch" msprop:Generator_ColumnVarNameInTable="columnbatch" msprop:Generator_ColumnPropNameInRow="batch" msprop:Generator_ColumnPropNameInTable="batchColumn" msprop:Generator_UserColumnName="batch" type="xs:string" minOccurs="0" />
               <xs:element name="partcode" msprop:Generator_ColumnVarNameInTable="columnpartcode" msprop:Generator_ColumnPropNameInRow="partcode" msprop:Generator_ColumnPropNameInTable="partcodeColumn" msprop:Generator_UserColumnName="partcode" type="xs:string" minOccurs="0" />
               <xs:element name="suppliercode" msprop:Generator_ColumnVarNameInTable="columnsuppliercode" msprop:Generator_ColumnPropNameInRow="suppliercode" msprop:Generator_ColumnPropNameInTable="suppliercodeColumn" msprop:Generator_UserColumnName="suppliercode" type="xs:string" minOccurs="0" />
               <xs:element name="lotnumber" msprop:Generator_ColumnVarNameInTable="columnlotnumber" msprop:Generator_ColumnPropNameInRow="lotnumber" msprop:Generator_ColumnPropNameInTable="lotnumberColumn" msprop:Generator_UserColumnName="lotnumber" type="xs:string" minOccurs="0" />
               <xs:element name="serial" msprop:Generator_ColumnVarNameInTable="columnserial" msprop:Generator_ColumnPropNameInRow="serial" msprop:Generator_ColumnPropNameInTable="serialColumn" msprop:Generator_UserColumnName="serial" type="xs:string" minOccurs="0" />
               <xs:element name="remarks" msprop:Generator_ColumnVarNameInTable="columnremarks" msprop:Generator_ColumnPropNameInRow="remarks" msprop:Generator_ColumnPropNameInTable="remarksColumn" msprop:Generator_UserColumnName="remarks" type="xs:string" minOccurs="0" />
-              <xs:element name="qty" msprop:Generator_ColumnVarNameInTable="columnqty" msprop:Generator_ColumnPropNameInRow="qty" msprop:Generator_ColumnPropNameInTable="qtyColumn" msprop:Generator_UserColumnName="qty" type="xs:string" minOccurs="0" />
-              <xs:element name="datein" msprop:Generator_ColumnVarNameInTable="columndatein" msprop:Generator_ColumnPropNameInRow="datein" msprop:Generator_ColumnPropNameInTable="dateinColumn" msprop:Generator_UserColumnName="datein" type="xs:string" minOccurs="0" />
+              <xs:element name="qty" msprop:Generator_ColumnVarNameInTable="columnqty" msprop:Generator_ColumnPropNameInRow="qty" msprop:Generator_ColumnPropNameInTable="qtyColumn" msprop:Generator_UserColumnName="qty" type="xs:int" minOccurs="0" />
+              <xs:element name="datein" msprop:Generator_ColumnVarNameInTable="columndatein" msprop:Generator_ColumnPropNameInRow="datein" msprop:Generator_ColumnPropNameInTable="dateinColumn" msprop:Generator_UserColumnName="datein" type="xs:dateTime" minOccurs="0" />
               <xs:element name="status_inspect" msprop:Generator_ColumnVarNameInTable="columnstatus_inspect" msprop:Generator_ColumnPropNameInRow="status_inspect" msprop:Generator_ColumnPropNameInTable="status_inspectColumn" msprop:Generator_UserColumnName="status_inspect" type="xs:string" minOccurs="0" />
               <xs:element name="inspector" msprop:Generator_ColumnVarNameInTable="columninspector" msprop:Generator_ColumnPropNameInRow="inspector" msprop:Generator_ColumnPropNameInTable="inspectorColumn" msprop:Generator_UserColumnName="inspector" type="xs:string" minOccurs="0" />
-              <xs:element name="date_inspect" msprop:Generator_ColumnVarNameInTable="columndate_inspect" msprop:Generator_ColumnPropNameInRow="date_inspect" msprop:Generator_ColumnPropNameInTable="date_inspectColumn" msprop:Generator_UserColumnName="date_inspect" type="xs:string" minOccurs="0" />
+              <xs:element name="date_inspect" msprop:Generator_ColumnVarNameInTable="columndate_inspect" msprop:Generator_ColumnPropNameInRow="date_inspect" msprop:Generator_ColumnPropNameInTable="date_inspectColumn" msprop:Generator_UserColumnName="date_inspect" type="xs:dateTime" minOccurs="0" />
               <xs:element name="reference" msprop:Generator_ColumnVarNameInTable="columnreference" msprop:Generator_ColumnPropNameInRow="reference" msprop:Generator_ColumnPropNameInTable="referenceColumn" msprop:Generator_UserColumnName="reference" type="xs:string" minOccurs="0" />
+              <xs:element name="inspect_remarks" msprop:Generator_ColumnVarNameInTable="columninspect_remarks" msprop:Generator_ColumnPropNameInRow="inspect_remarks" msprop:Generator_ColumnPropNameInTable="inspect_remarksColumn" msprop:Generator_UserColumnName="inspect_remarks" type="xs:string" minOccurs="0" />
+              <xs:element name="partname" msprop:Generator_ColumnVarNameInTable="columnpartname" msprop:Generator_ColumnPropNameInRow="partname" msprop:Generator_ColumnPropNameInTable="partnameColumn" msprop:Generator_UserColumnName="partname" type="xs:string" minOccurs="0" />
+              <xs:element name="part_details" msprop:Generator_ColumnVarNameInTable="columnpart_details" msprop:Generator_ColumnPropNameInRow="part_details" msprop:Generator_ColumnPropNameInTable="part_detailsColumn" msprop:Generator_UserColumnName="part_details" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>
     </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:f2_parts_scan" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
   </xs:element>
 </xs:schema>

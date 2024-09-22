@@ -309,6 +309,12 @@ Partial Public Class QC_Dataset
         
         Private columnreference As Global.System.Data.DataColumn
         
+        Private columninspect_remarks As Global.System.Data.DataColumn
+        
+        Private columnpartname As Global.System.Data.DataColumn
+        
+        Private columnpart_details As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -449,6 +455,30 @@ Partial Public Class QC_Dataset
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property inspect_remarksColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columninspect_remarks
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property partnameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpartname
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property part_detailsColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpart_details
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -485,12 +515,34 @@ Partial Public Class QC_Dataset
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function Addf2_parts_scanRow(ByVal id As String, ByVal batch As String, ByVal partcode As String, ByVal suppliercode As String, ByVal lotnumber As String, ByVal serial As String, ByVal remarks As String, ByVal qty As String, ByVal datein As String, ByVal status_inspect As String, ByVal inspector As String, ByVal date_inspect As String, ByVal reference As String) As f2_parts_scanRow
+        Public Overloads Function Addf2_parts_scanRow( _
+                    ByVal id As Integer,  _
+                    ByVal batch As String,  _
+                    ByVal partcode As String,  _
+                    ByVal suppliercode As String,  _
+                    ByVal lotnumber As String,  _
+                    ByVal serial As String,  _
+                    ByVal remarks As String,  _
+                    ByVal qty As Integer,  _
+                    ByVal datein As Date,  _
+                    ByVal status_inspect As String,  _
+                    ByVal inspector As String,  _
+                    ByVal date_inspect As Date,  _
+                    ByVal reference As String,  _
+                    ByVal inspect_remarks As String,  _
+                    ByVal partname As String,  _
+                    ByVal part_details As String) As f2_parts_scanRow
             Dim rowf2_parts_scanRow As f2_parts_scanRow = CType(Me.NewRow,f2_parts_scanRow)
-            Dim columnValuesArray() As Object = New Object() {id, batch, partcode, suppliercode, lotnumber, serial, remarks, qty, datein, status_inspect, inspector, date_inspect, reference}
+            Dim columnValuesArray() As Object = New Object() {id, batch, partcode, suppliercode, lotnumber, serial, remarks, qty, datein, status_inspect, inspector, date_inspect, reference, inspect_remarks, partname, part_details}
             rowf2_parts_scanRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowf2_parts_scanRow)
             Return rowf2_parts_scanRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function FindByid(ByVal id As Integer) As f2_parts_scanRow
+            Return CType(Me.Rows.Find(New Object() {id}),f2_parts_scanRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -523,12 +575,15 @@ Partial Public Class QC_Dataset
             Me.columninspector = MyBase.Columns("inspector")
             Me.columndate_inspect = MyBase.Columns("date_inspect")
             Me.columnreference = MyBase.Columns("reference")
+            Me.columninspect_remarks = MyBase.Columns("inspect_remarks")
+            Me.columnpartname = MyBase.Columns("partname")
+            Me.columnpart_details = MyBase.Columns("part_details")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnid = New Global.System.Data.DataColumn("id", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnid = New Global.System.Data.DataColumn("id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnid)
             Me.columnbatch = New Global.System.Data.DataColumn("batch", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnbatch)
@@ -542,18 +597,27 @@ Partial Public Class QC_Dataset
             MyBase.Columns.Add(Me.columnserial)
             Me.columnremarks = New Global.System.Data.DataColumn("remarks", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnremarks)
-            Me.columnqty = New Global.System.Data.DataColumn("qty", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnqty = New Global.System.Data.DataColumn("qty", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnqty)
-            Me.columndatein = New Global.System.Data.DataColumn("datein", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columndatein = New Global.System.Data.DataColumn("datein", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columndatein)
             Me.columnstatus_inspect = New Global.System.Data.DataColumn("status_inspect", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnstatus_inspect)
             Me.columninspector = New Global.System.Data.DataColumn("inspector", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columninspector)
-            Me.columndate_inspect = New Global.System.Data.DataColumn("date_inspect", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columndate_inspect = New Global.System.Data.DataColumn("date_inspect", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columndate_inspect)
             Me.columnreference = New Global.System.Data.DataColumn("reference", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnreference)
+            Me.columninspect_remarks = New Global.System.Data.DataColumn("inspect_remarks", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columninspect_remarks)
+            Me.columnpartname = New Global.System.Data.DataColumn("partname", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpartname)
+            Me.columnpart_details = New Global.System.Data.DataColumn("part_details", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpart_details)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
+            Me.columnid.AllowDBNull = false
+            Me.columnid.Unique = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -700,13 +764,9 @@ Partial Public Class QC_Dataset
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property id() As String
+        Public Property id() As Integer
             Get
-                Try 
-                    Return CType(Me(Me.tablef2_parts_scan.idColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'id' in table 'f2_parts_scan' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tablef2_parts_scan.idColumn),Integer)
             End Get
             Set
                 Me(Me.tablef2_parts_scan.idColumn) = value
@@ -805,10 +865,10 @@ Partial Public Class QC_Dataset
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property qty() As String
+        Public Property qty() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tablef2_parts_scan.qtyColumn),String)
+                    Return CType(Me(Me.tablef2_parts_scan.qtyColumn),Integer)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'qty' in table 'f2_parts_scan' is DBNull.", e)
                 End Try
@@ -820,10 +880,10 @@ Partial Public Class QC_Dataset
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property datein() As String
+        Public Property datein() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tablef2_parts_scan.dateinColumn),String)
+                    Return CType(Me(Me.tablef2_parts_scan.dateinColumn),Date)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'datein' in table 'f2_parts_scan' is DBNull.", e)
                 End Try
@@ -865,10 +925,10 @@ Partial Public Class QC_Dataset
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property date_inspect() As String
+        Public Property date_inspect() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tablef2_parts_scan.date_inspectColumn),String)
+                    Return CType(Me(Me.tablef2_parts_scan.date_inspectColumn),Date)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'date_inspect' in table 'f2_parts_scan' is DBNull.", e)
                 End Try
@@ -895,15 +955,48 @@ Partial Public Class QC_Dataset
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsidNull() As Boolean
-            Return Me.IsNull(Me.tablef2_parts_scan.idColumn)
-        End Function
+        Public Property inspect_remarks() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablef2_parts_scan.inspect_remarksColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'inspect_remarks' in table 'f2_parts_scan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablef2_parts_scan.inspect_remarksColumn) = value
+            End Set
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetidNull()
-            Me(Me.tablef2_parts_scan.idColumn) = Global.System.Convert.DBNull
-        End Sub
+        Public Property partname() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablef2_parts_scan.partnameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'partname' in table 'f2_parts_scan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablef2_parts_scan.partnameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property part_details() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablef2_parts_scan.part_detailsColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'part_details' in table 'f2_parts_scan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablef2_parts_scan.part_detailsColumn) = value
+            End Set
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
@@ -1047,6 +1140,42 @@ Partial Public Class QC_Dataset
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetreferenceNull()
             Me(Me.tablef2_parts_scan.referenceColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isinspect_remarksNull() As Boolean
+            Return Me.IsNull(Me.tablef2_parts_scan.inspect_remarksColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setinspect_remarksNull()
+            Me(Me.tablef2_parts_scan.inspect_remarksColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IspartnameNull() As Boolean
+            Return Me.IsNull(Me.tablef2_parts_scan.partnameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetpartnameNull()
+            Me(Me.tablef2_parts_scan.partnameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Ispart_detailsNull() As Boolean
+            Return Me.IsNull(Me.tablef2_parts_scan.part_detailsColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setpart_detailsNull()
+            Me(Me.tablef2_parts_scan.part_detailsColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

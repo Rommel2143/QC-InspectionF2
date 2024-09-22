@@ -29,6 +29,8 @@ Partial Class inspect_judge
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_pending = New Guna.UI2.WinForms.Guna2Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txt_remarks = New Guna.UI2.WinForms.Guna2TextBox()
         Me.SuspendLayout()
         '
         'Guna2ControlBox1
@@ -51,7 +53,7 @@ Partial Class inspect_judge
         Me.btn_pass.FillColor = System.Drawing.Color.ForestGreen
         Me.btn_pass.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_pass.ForeColor = System.Drawing.Color.White
-        Me.btn_pass.Location = New System.Drawing.Point(118, 94)
+        Me.btn_pass.Location = New System.Drawing.Point(118, 188)
         Me.btn_pass.Name = "btn_pass"
         Me.btn_pass.Size = New System.Drawing.Size(180, 60)
         Me.btn_pass.TabIndex = 1
@@ -66,7 +68,7 @@ Partial Class inspect_judge
         Me.btn_failed.FillColor = System.Drawing.Color.Tomato
         Me.btn_failed.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_failed.ForeColor = System.Drawing.Color.White
-        Me.btn_failed.Location = New System.Drawing.Point(118, 173)
+        Me.btn_failed.Location = New System.Drawing.Point(118, 267)
         Me.btn_failed.Name = "btn_failed"
         Me.btn_failed.Size = New System.Drawing.Size(180, 60)
         Me.btn_failed.TabIndex = 2
@@ -85,7 +87,7 @@ Partial Class inspect_judge
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label1.Location = New System.Drawing.Point(90, 54)
+        Me.Label1.Location = New System.Drawing.Point(21, 155)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(237, 21)
         Me.Label1.TabIndex = 3
@@ -100,17 +102,50 @@ Partial Class inspect_judge
         Me.txt_pending.FillColor = System.Drawing.SystemColors.ControlDarkDark
         Me.txt_pending.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_pending.ForeColor = System.Drawing.Color.White
-        Me.txt_pending.Location = New System.Drawing.Point(118, 257)
+        Me.txt_pending.Location = New System.Drawing.Point(118, 351)
         Me.txt_pending.Name = "txt_pending"
         Me.txt_pending.Size = New System.Drawing.Size(180, 60)
         Me.txt_pending.TabIndex = 4
         Me.txt_pending.Text = "Pending"
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label2.Location = New System.Drawing.Point(21, 63)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(71, 21)
+        Me.Label2.TabIndex = 5
+        Me.Label2.Text = "Remarks"
+        '
+        'txt_remarks
+        '
+        Me.txt_remarks.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_remarks.DefaultText = ""
+        Me.txt_remarks.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_remarks.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_remarks.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_remarks.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_remarks.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_remarks.Font = New System.Drawing.Font("Segoe UI", 11.25!)
+        Me.txt_remarks.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_remarks.Location = New System.Drawing.Point(25, 88)
+        Me.txt_remarks.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txt_remarks.Name = "txt_remarks"
+        Me.txt_remarks.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_remarks.PlaceholderText = "input remarks..."
+        Me.txt_remarks.SelectedText = ""
+        Me.txt_remarks.Size = New System.Drawing.Size(345, 40)
+        Me.txt_remarks.TabIndex = 6
+        '
         'inspect_judge
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(417, 356)
+        Me.ClientSize = New System.Drawing.Size(417, 446)
+        Me.Controls.Add(Me.txt_remarks)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txt_pending)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btn_failed)
@@ -131,4 +166,6 @@ Partial Class inspect_judge
     Friend WithEvents Guna2BorderlessForm1 As Guna.UI2.WinForms.Guna2BorderlessForm
     Friend WithEvents Label1 As Label
     Friend WithEvents txt_pending As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents txt_remarks As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label2 As Label
 End Class

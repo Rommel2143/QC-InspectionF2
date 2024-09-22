@@ -51,6 +51,10 @@
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Google.Protobuf, Version=3.28.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>packages\Google.Protobuf.3.28.1\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -155,6 +159,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QC_Dataset.xsd</DependentUpon>
     </Compile>
+    <Compile Include="2.Inspection\inspection_logsheet.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>inspection_logsheet.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="2.Inspection\inspect_incoming.Designer.vb">
       <DependentUpon>inspect_incoming.vb</DependentUpon>
     </Compile>
@@ -165,6 +175,12 @@
       <DependentUpon>inspect_judge.vb</DependentUpon>
     </Compile>
     <Compile Include="2.Inspection\inspect_judge.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2.Inspection\print_logsheet.Designer.vb">
+      <DependentUpon>print_logsheet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="2.Inspection\print_logsheet.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -206,11 +222,18 @@
     <EmbeddedResource Include="1.Main\manage_profiles.resx">
       <DependentUpon>manage_profiles.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="2.Inspection\inspection_logsheet.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>inspection_logsheet.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="2.Inspection\inspect_incoming.resx">
       <DependentUpon>inspect_incoming.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="2.Inspection\inspect_judge.resx">
       <DependentUpon>inspect_judge.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="2.Inspection\print_logsheet.resx">
+      <DependentUpon>print_logsheet.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -254,6 +277,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\errorsound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

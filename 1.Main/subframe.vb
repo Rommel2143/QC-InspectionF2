@@ -30,4 +30,8 @@
     Private Sub ManageMyProfileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManageMyProfileToolStripMenuItem.Click
         display_formsub(manage_profiles, "Manage my profile")
     End Sub
+
+    Private Sub IncomingLogsheetToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IncomingLogsheetToolStripMenuItem.Click
+        display_formsub(print_logsheet, "Print Incoming Inspection History Logsheet")
+    End Sub
 End Class

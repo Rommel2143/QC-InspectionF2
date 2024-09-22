@@ -5,7 +5,7 @@ Public Class inspect_incoming
     Public reference_no As String
     Private Sub inspect_incoming_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dtpicker1.Value = Date.Now
-        cmb_display("SELECT DISTINCT(reference) FROM f2_parts_scan WHERE date_inspect='" & datedb & "'", "reference", cmb_reference)
+        cmb_display("SELECT DISTINCT(reference) FROM f2_parts_scan WHERE reference IS NOT NULL and date_inspect='" & datedb & "' ", "reference", cmb_reference)
     End Sub
 
 
@@ -47,7 +47,7 @@ Public Class inspect_incoming
         Try
             con.Close()
             con.Open()
-            Dim query As String = "SELECT id as Record_ID, `partcode`, `suppliercode`, `remarks`, `lotnumber`, `qty`, 
+            Dim query As String = "SELECT id as Record_ID, `partcode`, `suppliercode`, `remarks`, `lotnumber`,`serial`, `qty`, 
                               CASE `status_inspect` 
                               WHEN 0 THEN 'Pending' 
                               WHEN 1 THEN 'Passed' 
@@ -107,9 +107,14 @@ Public Class inspect_incoming
     End Sub
 
     Private Sub Guna2Button1_Click_1(sender As Object, e As EventArgs) Handles Guna2Button1.Click
-        Dim inspect As New inspect_judge
-        inspect.Show()
-        inspect.BringToFront()
+        If reference_no = "" Then
+            display_error("Please select Reference no. first")
+
+        Else
+            Dim inspect As New inspect_judge
+            inspect.Show()
+            inspect.BringToFront()
+        End If
         'inspect_judge.Show()
         'inspect_judge.BringToFront()
     End Sub
@@ -134,7 +139,7 @@ Public Class inspect_incoming
         Try
             con.Close()
             con.Open()
-            Dim query As String = "SELECT id as Record_ID,`datein` AS Date_Recieved,partcode,supplier, `lotnumber`,`qty`, date_inspect,
+            Dim query As String = "SELECT id as Record_ID,`datein` AS Date_Recieved,partcode,suppliercode, `lotnumber`,`serial`,`qty`, date_inspect,
                               CASE `status_inspect` 
                               WHEN 0 THEN 'Pending' 
                               WHEN 1 THEN 'Passed' 
@@ -191,10 +196,12 @@ Public Class inspect_incoming
 
     Private Sub cmb_reference_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_reference.SelectedIndexChanged
         reference_no = cmb_reference.Text
+        lbl_reference.Text = cmb_reference.Text
         refresh_records()
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+    Private Sub Guna2Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel2.Paint
 
     End Sub
+
 End Class
