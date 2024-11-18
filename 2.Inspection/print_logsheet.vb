@@ -4,8 +4,8 @@ Public Class print_logsheet
     Private Sub printlogsheet_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dtpicker1.Value = Date.Now
     End Sub
-    Private Sub dtpicker1_ValueChanged(sender As Object, e As EventArgs) Handles dtpicker1.ValueChanged
-        cmb_display("SELECT DISTINCT(reference) FROM f2_parts_scan WHERE date_inspect='" & dtpicker1.Value.ToString("yyyy-MM-dd") & "'", "reference", cmb_reference)
+    Private Sub dtpicker1_ValueChanged(sender As Object, e As EventArgs)
+
     End Sub
 
     Sub viewdata()
@@ -37,7 +37,7 @@ Public Class print_logsheet
                                             JOIN f2_parts_masterlist pm ON ps.partcode=pm.partcode
                                                 
                                             WHERE
-                                                    ps.reference = '" & cmb_reference.Text & "'
+                                                    ps.date_inspect='" & dtpicker1.Value.ToString("yyyy-MM-dd") & "' and ps.batch = '" & cmb_batch.Text & "' and ps.partcode= '" & cmb_partcode.Text & "'
                                            
                                             ORDER BY
                                                    ps.lotnumber ASC", con)
@@ -47,7 +47,18 @@ Public Class print_logsheet
 
     End Sub
 
-    Private Sub cmb_reference_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_reference.SelectedIndexChanged
+    Private Sub cmb_reference_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_batch.SelectedIndexChanged
+
+        cmb_display("SELECT DISTINCT(partcode)  FROM `f2_parts_scan`  WHERE date_inspect = '" & dtpicker1.Value.ToString("yyyy-MM-dd") & "' AND batch = '" & cmb_batch.Text & "'", "partcode", cmb_partcode)
+
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
+
+    Private Sub cmb_partcode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_partcode.SelectedIndexChanged
         Dim myrpt As New inspection_logsheet
         dt.Clear()
         viewdata()
@@ -56,7 +67,7 @@ Public Class print_logsheet
         CrystalReportViewer1.ReportSource = myrpt
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
+    Private Sub Guna2DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles dtpicker1.ValueChanged
+        cmb_display("SELECT DISTINCT(batch) FROM f2_parts_scan WHERE date_inspect='" & dtpicker1.Value.ToString("yyyy-MM-dd") & "'", "batch", cmb_batch)
     End Sub
 End Class

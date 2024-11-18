@@ -1,22 +1,8 @@
 ﻿Public Class subframe
 
-    Private Sub MasterlistToolStripMenuItem_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
-
-    End Sub
-
     Private Sub LogoutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles logout.Click
         display_mainframe(Login)
         Login.txt_password.Clear()
-    End Sub
-
-    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
-        con.Close()
-        Application.Exit()
-
     End Sub
 
     Private Sub DeviceInfoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeviceInfoToolStripMenuItem.Click
@@ -33,5 +19,25 @@
 
     Private Sub IncomingLogsheetToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IncomingLogsheetToolStripMenuItem.Click
         display_formsub(print_logsheet, "Print Incoming Inspection History Logsheet")
+    End Sub
+
+    Private Sub SuggestImprovementToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SuggestImprovementToolStripMenuItem.Click
+        Dim suggest As New suggest_updates
+        suggest.ShowDialog()
+
+    End Sub
+
+    Private Sub CheckForUpdatesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CheckForUpdatesToolStripMenuItem.Click
+        Try
+            Dim setupPath As String = "\\ptif1-ds\SystemServer\QC-Inspection(F2)\setup.exe"
+            If System.IO.File.Exists(setupPath) Then
+                Process.Start(setupPath)
+                Application.Exit()
+            Else
+                MessageBox.Show("Update file not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Catch ex As Exception
+            MessageBox.Show("An error occurred while trying to update: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 End Class

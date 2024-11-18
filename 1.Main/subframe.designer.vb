@@ -33,8 +33,6 @@ Partial Class subframe
         Me.DeviceInfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SuggestImprovementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.logout = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.add_user = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
@@ -53,7 +51,7 @@ Partial Class subframe
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AssetsToolStripMenuItem, Me.userstrip})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1346, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1346, 40)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -62,7 +60,7 @@ Partial Class subframe
         Me.AssetsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InspectToolStripMenuItem, Me.IncomingLogsheetToolStripMenuItem})
         Me.AssetsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.AssetsToolStripMenuItem.Name = "AssetsToolStripMenuItem"
-        Me.AssetsToolStripMenuItem.Size = New System.Drawing.Size(113, 24)
+        Me.AssetsToolStripMenuItem.Size = New System.Drawing.Size(113, 36)
         Me.AssetsToolStripMenuItem.Text = "QC Inspection"
         '
         'InspectToolStripMenuItem
@@ -86,65 +84,72 @@ Partial Class subframe
         'userstrip
         '
         Me.userstrip.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.userstrip.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ManageMyProfileToolStripMenuItem, Me.CheckForUpdatesToolStripMenuItem, Me.DeviceInfoToolStripMenuItem, Me.SuggestImprovementToolStripMenuItem, Me.logout, Me.ExitToolStripMenuItem, Me.add_user})
+        Me.userstrip.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ManageMyProfileToolStripMenuItem, Me.CheckForUpdatesToolStripMenuItem, Me.DeviceInfoToolStripMenuItem, Me.SuggestImprovementToolStripMenuItem, Me.logout})
         Me.userstrip.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.userstrip.Image = CType(resources.GetObject("userstrip.Image"), System.Drawing.Image)
+        Me.userstrip.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.userstrip.Name = "userstrip"
         Me.userstrip.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.userstrip.Size = New System.Drawing.Size(66, 24)
+        Me.userstrip.Size = New System.Drawing.Size(82, 36)
         Me.userstrip.Text = "User"
-        Me.userstrip.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         '
         'ManageMyProfileToolStripMenuItem
         '
+        Me.ManageMyProfileToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ManageMyProfileToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.ManageMyProfileToolStripMenuItem.Image = CType(resources.GetObject("ManageMyProfileToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ManageMyProfileToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ManageMyProfileToolStripMenuItem.Name = "ManageMyProfileToolStripMenuItem"
-        Me.ManageMyProfileToolStripMenuItem.Size = New System.Drawing.Size(224, 24)
+        Me.ManageMyProfileToolStripMenuItem.Size = New System.Drawing.Size(188, 30)
         Me.ManageMyProfileToolStripMenuItem.Text = "Manage my profile"
         '
         'CheckForUpdatesToolStripMenuItem
         '
+        Me.CheckForUpdatesToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckForUpdatesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckForUpdatesToolStripMenuItem.Image = CType(resources.GetObject("CheckForUpdatesToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.CheckForUpdatesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.CheckForUpdatesToolStripMenuItem.Name = "CheckForUpdatesToolStripMenuItem"
-        Me.CheckForUpdatesToolStripMenuItem.Size = New System.Drawing.Size(224, 24)
+        Me.CheckForUpdatesToolStripMenuItem.Size = New System.Drawing.Size(188, 30)
         Me.CheckForUpdatesToolStripMenuItem.Text = "Check for updates"
         '
         'DeviceInfoToolStripMenuItem
         '
+        Me.DeviceInfoToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DeviceInfoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.DeviceInfoToolStripMenuItem.Image = CType(resources.GetObject("DeviceInfoToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.DeviceInfoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.DeviceInfoToolStripMenuItem.Name = "DeviceInfoToolStripMenuItem"
-        Me.DeviceInfoToolStripMenuItem.Size = New System.Drawing.Size(224, 24)
+        Me.DeviceInfoToolStripMenuItem.Size = New System.Drawing.Size(188, 30)
         Me.DeviceInfoToolStripMenuItem.Text = "Device Info."
         '
         'SuggestImprovementToolStripMenuItem
         '
+        Me.SuggestImprovementToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SuggestImprovementToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.SuggestImprovementToolStripMenuItem.Image = CType(resources.GetObject("SuggestImprovementToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.SuggestImprovementToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.SuggestImprovementToolStripMenuItem.Name = "SuggestImprovementToolStripMenuItem"
-        Me.SuggestImprovementToolStripMenuItem.Size = New System.Drawing.Size(224, 24)
-        Me.SuggestImprovementToolStripMenuItem.Text = "Suggest improvement"
+        Me.SuggestImprovementToolStripMenuItem.Size = New System.Drawing.Size(188, 30)
+        Me.SuggestImprovementToolStripMenuItem.Text = "Suggest Updates"
         '
         'logout
         '
+        Me.logout.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.logout.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.logout.Image = CType(resources.GetObject("logout.Image"), System.Drawing.Image)
+        Me.logout.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.logout.Name = "logout"
-        Me.logout.Size = New System.Drawing.Size(224, 24)
+        Me.logout.Size = New System.Drawing.Size(188, 30)
         Me.logout.Text = "Logout"
-        '
-        'ExitToolStripMenuItem
-        '
-        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(224, 24)
-        Me.ExitToolStripMenuItem.Text = "Exit"
-        '
-        'add_user
-        '
-        Me.add_user.Name = "add_user"
-        Me.add_user.Size = New System.Drawing.Size(224, 24)
-        Me.add_user.Text = "Add User"
-        Me.add_user.Visible = False
         '
         'Panel1
         '
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.ForeColor = System.Drawing.Color.White
-        Me.Panel1.Location = New System.Drawing.Point(0, 52)
+        Me.Panel1.Location = New System.Drawing.Point(0, 64)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1346, 733)
+        Me.Panel1.Size = New System.Drawing.Size(1346, 721)
         Me.Panel1.TabIndex = 1
         '
         'Panel2
@@ -155,7 +160,7 @@ Partial Class subframe
         Me.Panel2.Controls.Add(Me.Guna2PictureBox1)
         Me.Panel2.Controls.Add(Me.lbl_tittle)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(0, 28)
+        Me.Panel2.Location = New System.Drawing.Point(0, 40)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1346, 24)
         Me.Panel2.TabIndex = 2
@@ -239,7 +244,6 @@ Partial Class subframe
     Friend WithEvents CheckForUpdatesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DeviceInfoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SuggestImprovementToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents InspectToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents IncomingLogsheetToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel2 As Panel
@@ -247,6 +251,5 @@ Partial Class subframe
     Friend WithEvents lbl_calendar As Label
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Guna2PictureBox2 As Guna.UI2.WinForms.Guna2PictureBox
-    Friend WithEvents add_user As ToolStripMenuItem
     Friend WithEvents ManageMyProfileToolStripMenuItem As ToolStripMenuItem
 End Class

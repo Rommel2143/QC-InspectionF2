@@ -59,13 +59,13 @@ Public Class Login
                 fname = dr.GetString("firstname")
                 display_mainframe(subframe)
                 If dr.GetInt32("level") = 0 Then
-
-                    subframe.add_user.Visible = True
+                    'admin
                 Else
-                    subframe.add_user.Visible = False
+
                 End If
+
                 subframe.userstrip.Text = "Hello, " & fname
-                    subframe.lbl_calendar.Text = longdate
+                subframe.lbl_calendar.Text = longdate
                     error_panel.Visible = False
                     logdata("login")
 
@@ -86,6 +86,12 @@ Public Class Login
     Private Sub btn_login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
         login()
     End Sub
+
+    Private Sub txt_password_KeyDown(sender As Object, e As KeyEventArgs) Handles txt_password.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            login()
+        End If
+    End Sub
     Private Sub Guna2ImageButton1_MouseDown(sender As Object, e As MouseEventArgs) Handles Guna2ImageButton1.MouseDown
         ' Show password characters
         txt_password.PasswordChar = ""
@@ -97,11 +103,4 @@ Public Class Login
         txt_password.PasswordChar = "*"c
     End Sub
 
-    Private Sub txt_user_TextChanged(sender As Object, e As EventArgs) Handles txt_user.TextChanged
-
-    End Sub
-
-    Private Sub Guna2ImageButton1_Click(sender As Object, e As EventArgs) Handles Guna2ImageButton1.Click
-
-    End Sub
 End Class

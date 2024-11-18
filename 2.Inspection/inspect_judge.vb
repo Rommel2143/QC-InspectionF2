@@ -2,10 +2,12 @@
 Public Class inspect_judge
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles btn_pass.Click
         ChangeSelectedRowsStatus(1)
+        Me.Close()
     End Sub
 
     Private Sub btn_failed_Click(sender As Object, e As EventArgs) Handles btn_failed.Click
         ChangeSelectedRowsStatus(2)
+        Me.Close()
     End Sub
     Private Sub txt_pending_Click(sender As Object, e As EventArgs) Handles txt_pending.Click
         Try
@@ -21,7 +23,7 @@ Public Class inspect_judge
                     Dim rowId As Integer = Convert.ToInt32(row.Cells("Record_ID").Value)
 
                     ' Update the status_inspect for the selected row
-                    Dim cmdUpdateStatus As New MySqlCommand("UPDATE `f2_parts_scan` SET `status_inspect` = @newStatus , inspector = '',reference = '',date_inspect=NULL, inspect_remarks = ''  WHERE `id` = @id", con)
+                    Dim cmdUpdateStatus As New MySqlCommand("UPDATE `f2_parts_scan` SET `status_inspect` = @newStatus , inspector = '',date_inspect=NULL, inspect_remarks = ''  WHERE `id` = @id", con)
                     cmdUpdateStatus.Parameters.AddWithValue("@newStatus", 0)
                     cmdUpdateStatus.Parameters.AddWithValue("@id", rowId)
 
@@ -33,8 +35,9 @@ Public Class inspect_judge
             inspect_incoming.refreshgrid()
             inspect_incoming.btn_select.Text = "Select all"
             txt_remarks.Clear()
+            Me.Close()
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            display_error(ex.Message, 0)
         Finally
             con.Close()
         End Try
@@ -54,7 +57,7 @@ Public Class inspect_judge
                     Dim rowId As Integer = Convert.ToInt32(row.Cells("Record_ID").Value)
 
                     ' Update the status_inspect for the selected row
-                    Dim cmdUpdateStatus As New MySqlCommand("UPDATE `f2_parts_scan` SET `status_inspect` = @newStatus , inspector = '" & idno & "',reference = '" & inspect_incoming.reference_no & "',date_inspect = '" & datedb & "',inspect_remarks=@inspect_remarks  WHERE `id` = @id", con)
+                    Dim cmdUpdateStatus As New MySqlCommand("UPDATE `f2_parts_scan` SET `status_inspect` = @newStatus , inspector = '" & idno & "',date_inspect = '" & datedb & "',inspect_remarks=@inspect_remarks  WHERE `id` = @id", con)
                     cmdUpdateStatus.Parameters.AddWithValue("@newStatus", newStatus)
                     cmdUpdateStatus.Parameters.AddWithValue("@id", rowId)
                     cmdUpdateStatus.Parameters.AddWithValue("@inspect_remarks", txt_remarks.Text)
@@ -67,13 +70,10 @@ Public Class inspect_judge
             inspect_incoming.btn_select.Text = "Select all"
             txt_remarks.Clear()
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            display_error(ex.Message, 0)
         Finally
             con.Close()
         End Try
     End Sub
 
-    Private Sub inspect_judge_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class
