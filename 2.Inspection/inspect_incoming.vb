@@ -15,7 +15,12 @@ Public Class inspect_incoming
 
     Private Sub Guna2DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles dtpicker1.ValueChanged
         cmb_display("SELECT distinct(batch) FROM `f2_parts_scan` WHERE datein='" & dtpicker1.Value.ToString("yyyy-MM-dd") & "' ORDER BY batch ", "batch", cmb_batch)
+        datagrid1.DataSource = Nothing
+        cmb_partcode.Items.Clear()
+        datagrid1.Columns.Clear()
     End Sub
+
+
     Public Sub AddCheckboxColumn()
         ' Check if the checkbox column already exists
         If Not datagrid1.Columns.Contains("SelectCheckBox") Then
@@ -42,7 +47,7 @@ Public Class inspect_incoming
         Try
             con.Close()
             con.Open()
-            Dim query As String = "SELECT ps.id as Record_ID, `suppliercode`, `remarks`, `lotnumber`,`serial`, `qty`, 
+            Dim query As String = "SELECT ps.id as Record_ID, `suppliercode`, `remarks`, `lotnumber`,`serial`, `qty`, datein,
                               CASE `status_inspect` 
                               WHEN 0 THEN 'Pending' 
                               WHEN 1 THEN 'Passed' 
@@ -65,6 +70,38 @@ Public Class inspect_incoming
 
 
             datagrid1.Columns("Record_ID").Visible = False
+            HighlightPreviousRecords()
+
+        Catch ex As Exception
+            display_error(ex.Message, 0)
+        Finally
+            con.Close()
+
+        End Try
+    End Sub
+    Private Sub HighlightPreviousRecords()
+        Try
+            For Each row As DataGridViewRow In datagrid1.Rows
+
+                If Not row.IsNewRow Then
+                    Dim lotNumber As String = row.Cells("lotnumber").Value.ToString()
+                    Dim query As String = "SELECT id FROM f2_parts_scan 
+                          WHERE datein < '" & dtpicker1.Value.ToString("yyyy-MM-dd") & "'  AND lotnumber ='" & lotNumber & "' 
+                         LIMIT 1"
+                    con.Close()
+                    con.Open()
+                    Dim cmd As New MySqlCommand(query, con)
+                    dr = cmd.ExecuteReader
+                    If dr.Read = True Then
+                        row.DefaultCellStyle.BackColor = Color.Tomato
+                        row.DefaultCellStyle.ForeColor = Color.White
+                    Else
+                        row.DefaultCellStyle.BackColor = Color.White
+                        row.DefaultCellStyle.ForeColor = Color.Black
+                    End If
+
+                End If
+            Next
 
 
         Catch ex As Exception
@@ -74,8 +111,6 @@ Public Class inspect_incoming
 
         End Try
     End Sub
-
-
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles btn_select.Click
         If btn_select.Text = "Select all" Then
@@ -123,4 +158,19 @@ Public Class inspect_incoming
         refreshgrid()
         AddCheckboxColumn()
     End Sub
+
+    Private Sub datagrid1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagrid1.CellDoubleClick
+        ' Check if the click is on a valid row and column
+        If e.RowIndex >= 0 AndAlso e.ColumnIndex >= 0 Then
+            ' Initialize the lotnumber_select form and pass the lotnumber value
+            Dim selectlot As New lotnumber_select
+            Dim selectedLotNumber As String = datagrid1.Rows(e.RowIndex).Cells("lotnumber").Value.ToString()
+            selectlot.lotnumber = selectedLotNumber
+
+            ' Show the dialog and bring it to the front
+            selectlot.ShowDialog()
+            selectlot.BringToFront()
+        End If
+    End Sub
+
 End Class

@@ -117,31 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Guna2Button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIRSURBVEhL7ZRL
-        yE1RGIY3Cr9LKTMZYGJgampgQB06x7n0Pt8SJ6dEJGUgQ44oMlAyNDMwELlEyUy5xEQxUK6ZuA8oE/qL
-        vt/eu3WW/WufGHprtdZ3fddZ7/5OlkVotVoLzewpcF7STknL4zgw9BX7xgKwB5gEbgHngLdm9gI4A2w2
-        s9N/QzDDzJ6Y2T7g5XA4nOnOXq+3ysz2ApeAz8Br4JSZbWq324vSJtNC0jrgoZ+Bu5I2pjl+ezM7CxwA
-        bgBfgAfAcTNb32w256U1JYCrkrb72cy2ANcrckY0kDQ7hLAGOATcB752Op3Fo1W/nmEF8EHSRFEIvHF/
-        nJcSxMh/1Xdgfxrz4EkzO5b4jpjZicRXSeB6uW7ADuCVpFll0N8N+BhCWBYXhRCWAO/jd52OwAV33fKc
-        e8CGMgjsknQxLigAXJA0iOxKAuCm65aftwLX4uAjYG1cUMD9/pVE9m8Eklb6vDQajTlu+z6iXz5YP/6w
-        JotmVQT5TByNfW6X+gHPQwir44QC7ve/jsJOCSQtAD51u92lZVGWZW4D76a+SjM7LOmyT3Kc5DZwRdLB
-        wlFBsNt1KisiuB/Y5kkTku54M79xv9+f77sPHnB7MBjMjYpGCIDHtfRzknwanwHffPebx83zopSgtn61
-        UEFQW79aSAnG0a8WUoJx9KuFlMBRV79aqCL4p/hPMIWKYRlrpf1+AhGBdBEjzD6eAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btn_select.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADvSURBVEhL7VZb
-        DoJAENsvFc+j3IEPPtvhk5No9ErKDTTeQfAmJphuICEbiRoeXzYhITs7nc1At+Occy5N0zXJI8mK5JNk
-        bWZ3xQQze2gteMo3ceVWZnYAEPlgQ34DcDKzLYBFm/grlCsOkmcAV19EJxd5uHkoVITkXi9VlmWbcMNQ
-        AIh9G9W3IW3pQ5IkS3GrQB0Gx4Ln7v4NY2NK7hkhkYRrY8GLdY6P/C/QC8/dvTXHxl8HHzGbDia/ricz
-        HN+ixqCnsMwCwE6VIhl0Y9TxkHYpt7HKguQlz/NVG4hk0BJGO7b0jCXfjC2lTt6SvwD0y6euQZdAIQAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
 </root>

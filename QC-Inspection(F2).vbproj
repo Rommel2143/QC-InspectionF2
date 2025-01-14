@@ -26,7 +26,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>\\ptif1-ds\SystemServer\QC-Inspection%28F2%29\</UpdateUrl>
-    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationRevision>9</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -217,6 +217,12 @@
     <Compile Include="2.Inspection\inspect_judge.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="2.Inspection\lotnumber_select.Designer.vb">
+      <DependentUpon>lotnumber_select.vb</DependentUpon>
+    </Compile>
+    <Compile Include="2.Inspection\lotnumber_select.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="2.Inspection\print_logsheet.Designer.vb">
       <DependentUpon>print_logsheet.vb</DependentUpon>
     </Compile>
@@ -274,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="2.Inspection\inspect_judge.resx">
       <DependentUpon>inspect_judge.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="2.Inspection\lotnumber_select.resx">
+      <DependentUpon>lotnumber_select.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="2.Inspection\print_logsheet.resx">
       <DependentUpon>print_logsheet.vb</DependentUpon>
