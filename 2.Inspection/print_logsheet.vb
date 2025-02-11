@@ -31,11 +31,12 @@ Public Class print_logsheet
                                                 ps.reference,
                                                 ps.inspect_remarks,
                                                 pm.partname,
-                                                CONCAT(pm.partname, ' (', ps.partcode, ')') AS part_details
+                                                CONCAT(pm.partname, ' (', ps.partcode, ')') AS part_details,
+                                               CONCAT( tu.last,' ',tu.firstname) AS fullname
                                             FROM 
                                                 f2_parts_scan ps
                                             JOIN f2_parts_masterlist pm ON ps.partcode=pm.partcode
-                                                
+                                              LEFT JOIN   trc_user tu  ON ps.inspector = tu.IDno
                                             WHERE
                                                     ps.date_inspect='" & dtpicker1.Value.ToString("yyyy-MM-dd") & "' and ps.batch = '" & cmb_batch.Text & "' and ps.partcode= '" & cmb_partcode.Text & "'
                                            

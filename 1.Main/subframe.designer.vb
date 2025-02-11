@@ -27,6 +27,7 @@ Partial Class subframe
         Me.AssetsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InspectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IncomingLogsheetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SearchLotNumberToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.userstrip = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManageMyProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CheckForUpdatesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -57,7 +58,7 @@ Partial Class subframe
         '
         'AssetsToolStripMenuItem
         '
-        Me.AssetsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InspectToolStripMenuItem, Me.IncomingLogsheetToolStripMenuItem})
+        Me.AssetsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InspectToolStripMenuItem, Me.IncomingLogsheetToolStripMenuItem, Me.SearchLotNumberToolStripMenuItem})
         Me.AssetsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.AssetsToolStripMenuItem.Name = "AssetsToolStripMenuItem"
         Me.AssetsToolStripMenuItem.Size = New System.Drawing.Size(113, 36)
@@ -81,6 +82,15 @@ Partial Class subframe
         Me.IncomingLogsheetToolStripMenuItem.Size = New System.Drawing.Size(260, 38)
         Me.IncomingLogsheetToolStripMenuItem.Text = "Print Inspection Logsheet"
         '
+        'SearchLotNumberToolStripMenuItem
+        '
+        Me.SearchLotNumberToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.SearchLotNumberToolStripMenuItem.Image = CType(resources.GetObject("SearchLotNumberToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.SearchLotNumberToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.SearchLotNumberToolStripMenuItem.Name = "SearchLotNumberToolStripMenuItem"
+        Me.SearchLotNumberToolStripMenuItem.Size = New System.Drawing.Size(260, 38)
+        Me.SearchLotNumberToolStripMenuItem.Text = "Parts Logs"
+        '
         'userstrip
         '
         Me.userstrip.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
@@ -100,7 +110,7 @@ Partial Class subframe
         Me.ManageMyProfileToolStripMenuItem.Image = CType(resources.GetObject("ManageMyProfileToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ManageMyProfileToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ManageMyProfileToolStripMenuItem.Name = "ManageMyProfileToolStripMenuItem"
-        Me.ManageMyProfileToolStripMenuItem.Size = New System.Drawing.Size(188, 30)
+        Me.ManageMyProfileToolStripMenuItem.Size = New System.Drawing.Size(184, 30)
         Me.ManageMyProfileToolStripMenuItem.Text = "Manage my profile"
         '
         'CheckForUpdatesToolStripMenuItem
@@ -110,7 +120,7 @@ Partial Class subframe
         Me.CheckForUpdatesToolStripMenuItem.Image = CType(resources.GetObject("CheckForUpdatesToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CheckForUpdatesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.CheckForUpdatesToolStripMenuItem.Name = "CheckForUpdatesToolStripMenuItem"
-        Me.CheckForUpdatesToolStripMenuItem.Size = New System.Drawing.Size(188, 30)
+        Me.CheckForUpdatesToolStripMenuItem.Size = New System.Drawing.Size(184, 30)
         Me.CheckForUpdatesToolStripMenuItem.Text = "Check for updates"
         '
         'DeviceInfoToolStripMenuItem
@@ -120,7 +130,7 @@ Partial Class subframe
         Me.DeviceInfoToolStripMenuItem.Image = CType(resources.GetObject("DeviceInfoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.DeviceInfoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.DeviceInfoToolStripMenuItem.Name = "DeviceInfoToolStripMenuItem"
-        Me.DeviceInfoToolStripMenuItem.Size = New System.Drawing.Size(188, 30)
+        Me.DeviceInfoToolStripMenuItem.Size = New System.Drawing.Size(184, 30)
         Me.DeviceInfoToolStripMenuItem.Text = "Device Info."
         '
         'SuggestImprovementToolStripMenuItem
@@ -130,7 +140,7 @@ Partial Class subframe
         Me.SuggestImprovementToolStripMenuItem.Image = CType(resources.GetObject("SuggestImprovementToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SuggestImprovementToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.SuggestImprovementToolStripMenuItem.Name = "SuggestImprovementToolStripMenuItem"
-        Me.SuggestImprovementToolStripMenuItem.Size = New System.Drawing.Size(188, 30)
+        Me.SuggestImprovementToolStripMenuItem.Size = New System.Drawing.Size(184, 30)
         Me.SuggestImprovementToolStripMenuItem.Text = "Suggest Updates"
         '
         'logout
@@ -140,13 +150,12 @@ Partial Class subframe
         Me.logout.Image = CType(resources.GetObject("logout.Image"), System.Drawing.Image)
         Me.logout.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.logout.Name = "logout"
-        Me.logout.Size = New System.Drawing.Size(188, 30)
+        Me.logout.Size = New System.Drawing.Size(184, 30)
         Me.logout.Text = "Logout"
         '
         'Panel1
         '
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.ForeColor = System.Drawing.Color.White
         Me.Panel1.Location = New System.Drawing.Point(0, 64)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1346, 721)
@@ -252,4 +261,5 @@ Partial Class subframe
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Guna2PictureBox2 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents ManageMyProfileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SearchLotNumberToolStripMenuItem As ToolStripMenuItem
 End Class

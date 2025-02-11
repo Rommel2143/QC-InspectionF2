@@ -54,7 +54,7 @@ Public Class inspect_incoming
                               WHEN 2 THEN 'Failed' 
                               END AS `status` , inspect_remarks AS Inspector_Remarks 
                               FROM f2_parts_scan ps
-                            JOIN f2_parts_masterlist pm ON pm.partcode= ps.partcode 
+                            JOIN f2_parts_masterlist pm  ON pm.partcode = ps.partcode AND pm.supplier = ps.suppliercode
                                 
                               WHERE datein = @datein AND batch = @batch and ps.partcode=@partcode"
 

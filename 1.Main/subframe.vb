@@ -40,4 +40,8 @@
             MessageBox.Show("An error occurred while trying to update: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
+    Private Sub SearchLotNumberToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SearchLotNumberToolStripMenuItem.Click
+        display_formsub(parts_logs, "Parts Logs")
+    End Sub
 End Class

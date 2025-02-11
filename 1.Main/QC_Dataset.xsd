@@ -12,7 +12,7 @@
   <xs:element name="QC_Dataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="QC_Dataset" msprop:Generator_UserDSName="QC_Dataset">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="f2_parts_scan" msprop:Generator_TableClassName="f2_parts_scanDataTable" msprop:Generator_TableVarName="tablef2_parts_scan" msprop:Generator_RowChangedName="f2_parts_scanRowChanged" msprop:Generator_TablePropName="f2_parts_scan" msprop:Generator_RowDeletingName="f2_parts_scanRowDeleting" msprop:Generator_RowChangingName="f2_parts_scanRowChanging" msprop:Generator_RowEvHandlerName="f2_parts_scanRowChangeEventHandler" msprop:Generator_RowDeletedName="f2_parts_scanRowDeleted" msprop:Generator_RowClassName="f2_parts_scanRow" msprop:Generator_UserTableName="f2_parts_scan" msprop:Generator_RowEvArgName="f2_parts_scanRowChangeEvent">
+        <xs:element name="f2_parts_scan" msprop:Generator_TableClassName="f2_parts_scanDataTable" msprop:Generator_TableVarName="tablef2_parts_scan" msprop:Generator_TablePropName="f2_parts_scan" msprop:Generator_RowDeletingName="f2_parts_scanRowDeleting" msprop:Generator_RowChangingName="f2_parts_scanRowChanging" msprop:Generator_RowEvHandlerName="f2_parts_scanRowChangeEventHandler" msprop:Generator_RowDeletedName="f2_parts_scanRowDeleted" msprop:Generator_UserTableName="f2_parts_scan" msprop:Generator_RowChangedName="f2_parts_scanRowChanged" msprop:Generator_RowEvArgName="f2_parts_scanRowChangeEvent" msprop:Generator_RowClassName="f2_parts_scanRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -31,6 +31,7 @@
               <xs:element name="inspect_remarks" msprop:Generator_ColumnVarNameInTable="columninspect_remarks" msprop:Generator_ColumnPropNameInRow="inspect_remarks" msprop:Generator_ColumnPropNameInTable="inspect_remarksColumn" msprop:Generator_UserColumnName="inspect_remarks" type="xs:string" minOccurs="0" />
               <xs:element name="partname" msprop:Generator_ColumnVarNameInTable="columnpartname" msprop:Generator_ColumnPropNameInRow="partname" msprop:Generator_ColumnPropNameInTable="partnameColumn" msprop:Generator_UserColumnName="partname" type="xs:string" minOccurs="0" />
               <xs:element name="part_details" msprop:Generator_ColumnVarNameInTable="columnpart_details" msprop:Generator_ColumnPropNameInRow="part_details" msprop:Generator_ColumnPropNameInTable="part_detailsColumn" msprop:Generator_UserColumnName="part_details" type="xs:string" minOccurs="0" />
+              <xs:element name="fullname" msprop:Generator_ColumnVarNameInTable="columnfullname" msprop:Generator_ColumnPropNameInRow="fullname" msprop:Generator_ColumnPropNameInTable="fullnameColumn" msprop:Generator_UserColumnName="fullname" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
