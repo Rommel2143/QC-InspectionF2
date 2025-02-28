@@ -40,6 +40,7 @@ Partial Class subframe
         Me.lbl_calendar = New System.Windows.Forms.Label()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.lbl_tittle = New System.Windows.Forms.Label()
+        Me.TraceSerialToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,7 +59,7 @@ Partial Class subframe
         '
         'AssetsToolStripMenuItem
         '
-        Me.AssetsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InspectToolStripMenuItem, Me.IncomingLogsheetToolStripMenuItem, Me.SearchLotNumberToolStripMenuItem})
+        Me.AssetsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InspectToolStripMenuItem, Me.IncomingLogsheetToolStripMenuItem, Me.SearchLotNumberToolStripMenuItem, Me.TraceSerialToolStripMenuItem})
         Me.AssetsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.AssetsToolStripMenuItem.Name = "AssetsToolStripMenuItem"
         Me.AssetsToolStripMenuItem.Size = New System.Drawing.Size(113, 36)
@@ -221,6 +222,15 @@ Partial Class subframe
         Me.lbl_tittle.Size = New System.Drawing.Size(0, 20)
         Me.lbl_tittle.TabIndex = 0
         '
+        'TraceSerialToolStripMenuItem
+        '
+        Me.TraceSerialToolStripMenuItem.ForeColor = System.Drawing.Color.DimGray
+        Me.TraceSerialToolStripMenuItem.Image = CType(resources.GetObject("TraceSerialToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.TraceSerialToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.TraceSerialToolStripMenuItem.Name = "TraceSerialToolStripMenuItem"
+        Me.TraceSerialToolStripMenuItem.Size = New System.Drawing.Size(260, 38)
+        Me.TraceSerialToolStripMenuItem.Text = "Trace Serial"
+        '
         'subframe
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -262,4 +272,5 @@ Partial Class subframe
     Friend WithEvents Guna2PictureBox2 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents ManageMyProfileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SearchLotNumberToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TraceSerialToolStripMenuItem As ToolStripMenuItem
 End Class

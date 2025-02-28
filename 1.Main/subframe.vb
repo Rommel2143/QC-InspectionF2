@@ -44,4 +44,8 @@
     Private Sub SearchLotNumberToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SearchLotNumberToolStripMenuItem.Click
         display_formsub(parts_logs, "Parts Logs")
     End Sub
+
+    Private Sub TraceSerialToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TraceSerialToolStripMenuItem.Click
+        display_formsub(trace_serial, "Trace Serial")
+    End Sub
 End Class

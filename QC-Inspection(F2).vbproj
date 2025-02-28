@@ -26,7 +26,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>\\ptif1-ds\SystemServer\QC-Inspection%28F2%29\</UpdateUrl>
-    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationRevision>13</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -288,6 +288,12 @@
     <Compile Include="1.Main\subframe.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="trace serial\trace_serial.Designer.vb">
+      <DependentUpon>trace_serial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="trace serial\trace_serial.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="1.Main\Login.resx">
@@ -332,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="1.Main\subframe.resx">
       <DependentUpon>subframe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="trace serial\trace_serial.resx">
+      <DependentUpon>trace_serial.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
