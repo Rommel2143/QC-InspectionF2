@@ -141,7 +141,6 @@ Partial Class inspect_judge
         Me.txt_remarks.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_remarks.MaxLength = 32
         Me.txt_remarks.Name = "txt_remarks"
-        Me.txt_remarks.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_remarks.PlaceholderText = "input remarks..."
         Me.txt_remarks.SelectedText = ""
         Me.txt_remarks.Size = New System.Drawing.Size(209, 36)
